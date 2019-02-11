@@ -21,9 +21,9 @@ import nonboolListTag from "./nonboolListTag";
 
 type uint = number;
 
-function pointerCopy(
+export function pointerCopy(
   arena: ArenaR, source: Word<SegmentR>, level: uint,
-  targetArena: ArenaB, target: Word<SegmentB>
+  targetArena: ArenaB, target: Word<SegmentB>,
 ): void {
   if (isNull(source)) {
     targetArena.zero(target, 8);
