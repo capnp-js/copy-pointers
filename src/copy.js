@@ -30,7 +30,7 @@ export function pointerCopy(
   } else {
     const p = arena.pointer(source);
     if (p.typeBits === 0x00) {
-      arena.structCopy(arena.genericStructLayout(p), source.segment, level, targetArena, target);
+      arena.structCopy(arena.genericStructLayout(p), p.object.segment, level, targetArena, target);
     } else if (p.typeBits === 0x01) {
       const type = u3_mask(p.hi, 0x07);
       if (type === 0x01) {
